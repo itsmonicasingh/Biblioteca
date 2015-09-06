@@ -1,17 +1,26 @@
 package com.twu.biblioteca;
 
-import java.util.ArrayList;
-
 public class Book {
 
-    private ArrayList<String> listOfBooks = new ArrayList<String>();
-    private int count = 0;
+    private String author;
+    private String title;
+    private int year;
 
-    Book(String book) {
-        listOfBooks.add(book);
+    public Book(String title, String author, int year) {
+        this.title = title;
+        this.author = author;
+        this.year = year;
+    }
+
+    public void displayHeading() {
+        System.out.format("%-23s%-23s%-23s\n", "TITLE", "AUTHOR", "YEAR");
+
     }
 
     public void display() {
-        System.out.println("Dracula");
+        System.out.format("%-23s%-23s%-23s\n", title, author, year);
     }
+
 }
+
+

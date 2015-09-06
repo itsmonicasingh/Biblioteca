@@ -19,7 +19,7 @@ public class WelcomeMessageTest {
     }
 
     @Test
-    public void shouldDisplayWelcomeMessageOfDisplay() {
+    public void shouldDisplayWelcomeMessage() {
         WelcomeMessage welcomeMessage = new WelcomeMessage("Welcome to Bangalore Public Library");
         welcomeMessage.display();
         assertEquals("Welcome to Bangalore Public Library\n", outContent.toString());

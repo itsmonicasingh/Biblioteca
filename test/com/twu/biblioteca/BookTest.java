@@ -12,17 +12,16 @@ import static org.junit.Assert.assertEquals;
 public class BookTest {
 
     private final ByteArrayOutputStream outContent = new ByteArrayOutputStream();
-
     @Before
-    public void setOutputStream() {
+    public void setUpStreams() {
         System.setOut(new PrintStream(outContent));
     }
 
     @Test
-    public void shouldDisplayABookFromTheLibrary() {
-        Book book = new Book("Draclua");
+    public void specDisplayingABook() {
+        Book book = new Book("Alchemist", "Paulo Coelho", 2011);
         book.display();
-        assertEquals("Dracula\n", outContent.toString());
+        assertEquals(String.format("%-23s%-23s%-23d\n", "Alchemist", "Paulo Coelho", 2011), outContent.toString());
     }
 
     @After
