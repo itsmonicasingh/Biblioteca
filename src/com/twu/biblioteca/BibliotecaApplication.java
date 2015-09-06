@@ -5,9 +5,16 @@ import java.util.Arrays;
 
 public class BibliotecaApplication {
 
-    public static void main(String[] args) {
+    public void start() {
         WelcomeMessage welcomeMessage = new WelcomeMessage("Welcome to Bangalore Public Library");
+        ArrayList<String> listOfBooks = new ArrayList<String>(Arrays.asList("Alchemist", "Chromosome 6", "Sixth Sense"));
+        BookList bookList = new BookList(listOfBooks);
         welcomeMessage.display();
+        System.out.println();
+        bookList.display();
+    }
+
+    public static void main(String[] args) {
 
     }
 
