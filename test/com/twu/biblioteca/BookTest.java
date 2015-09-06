@@ -9,20 +9,20 @@ import java.io.PrintStream;
 
 import static org.junit.Assert.assertEquals;
 
-public class WelcomeMessageTest {
+public class BookTest {
 
     private final ByteArrayOutputStream outContent = new ByteArrayOutputStream();
 
     @Before
-    public void setUpStreams() {
+    public void setOutputStream() {
         System.setOut(new PrintStream(outContent));
     }
 
     @Test
-    public void shouldDisplayWelcomeMessageOfDisplay() {
-        WelcomeMessage welcomeMessage = new WelcomeMessage("Welcome to Bangalore Public Library");
-        welcomeMessage.display();
-        assertEquals("Welcome to Bangalore Public Library\n", outContent.toString());
+    public void shouldDisplayABookFromTheLibrary() {
+        Book book = new Book("Draclua");
+        book.display();
+        assertEquals("Dracula\n", outContent.toString());
     }
 
     @After
@@ -30,4 +30,3 @@ public class WelcomeMessageTest {
         System.setOut(System.out);
     }
 }
-
